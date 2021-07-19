@@ -5,7 +5,11 @@ import Calculator from './main/Calculator';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <Calculator/>,
+  <div>
+    <h1>Calculadora</h1>
+    <Calculator/>
+  </div>
+  ,
   document.getElementById('root')
 );
 
