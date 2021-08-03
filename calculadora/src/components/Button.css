@@ -1,6 +1,6 @@
 :root{
     --bg-button: #ccc;
-    --bg-button:solid 1px #888;
+    --border-button:solid 1px #888;
 }
 .button {
     font-size: 1.4em;
@@ -8,4 +8,5 @@
     border: none;
     border-right: var(--border-button);
     border-bottom: var(--border-button);
+    outline: none;
 }
