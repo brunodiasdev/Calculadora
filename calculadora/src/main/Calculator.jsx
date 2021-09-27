@@ -35,8 +35,8 @@ export default class Calculator extends Component {
         }
 
         const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay
-        const currentValue = clearDisplay ? '' : this.state.displayValue
-        const displaValue = currentValue + n
+        const currentValue = clearDisplay ? '' : this.state.clearDisplay
+        const displayValue = currentValue + n
         this.setState( { displayValue, clearDisplay:false})
     }
 
