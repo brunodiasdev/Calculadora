@@ -30,7 +30,14 @@ export default class Calculator extends Component {
         console.log(operation)
     }
     addDigit(n){
-        console.log(n)
+        if (n === '.' && this.state.displayValue.includes('.')){
+            return
+        }
+
+        const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay
+        const currentValue = clearDisplay ? '' : this.state.displayValue
+        const displaValue = currentValue + n
+        this.setState( { displayValue, clearDisplay:false})
     }
 
     render(){
