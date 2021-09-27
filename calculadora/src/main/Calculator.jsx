@@ -35,9 +35,17 @@ export default class Calculator extends Component {
         }
 
         const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay
-        const currentValue = clearDisplay ? '' : this.state.clearDisplay
+        const currentValue = clearDisplay ? '' : this.state.displayValue
         const displayValue = currentValue + n
         this.setState( { displayValue, clearDisplay:false})
+
+        if (n !== '.'){
+            const i = this.state.current
+            const newValue = parseFloat(displayValue)
+            const values = [...this.state.values]
+            values[i] = newValue
+            this.setState({ values })
+        }
     }
 
     render(){
@@ -52,7 +60,7 @@ export default class Calculator extends Component {
                 <Button label='*'click={this.setOperation} operation/>                    
                 <Button label='4' click={this.addDigit}/>                    
                 <Button label='5' click={this.addDigit}/>                    
-                <Button label='6'/>                    
+                <Button label='6' click={this.addDigit}/>                    
                 <Button label='-'click={this.setOperation} operation/>                    
                 <Button label='1' click={this.addDigit}/>                    
                 <Button label='2' click={this.addDigit}/>                    
